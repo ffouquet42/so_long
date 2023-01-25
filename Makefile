@@ -1,4 +1,4 @@
-SRCS		=	dev/test.c									\
+SRCS		=	srcs/so_long.c									\
 
 OBJS		=	$(SRCS:.c=.o)
 
