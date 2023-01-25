@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 15:48:46 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/25 17:53:24 by fllanet          ###   ########.fr       */
+/*   Created: 2023/01/25 20:00:15 by fllanet           #+#    #+#             */
+/*   Updated: 2023/01/25 20:17:59 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../../includes/so_long.h"
 
-int main(int argc, char **argv)
+void	ft_putchar(char c)
 {
-    void *mlx_ptr;
-    void *win_ptr;
-    void *img_ptr;
+    write(1, &c, 1);
+}
 
-    mlx_ptr = mlx_init();
+void	ft_putstr(char *str)
+{
+	int	i;
 
-    win_ptr = mlx_new_window(mlx_ptr, 256, 256, "so_long");
-    img_ptr = mlx_xpm_file_to_image(mlx_ptr, "../img/wall.xpm", 64, 64);
-    
-    //mlx_put_image_to_window(mlx_ptr, win_ptr, img_ptr, 0, 0);
-    
-    mlx_loop(mlx_ptr);
-    
-    return (0);
+	i = 0;
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 }

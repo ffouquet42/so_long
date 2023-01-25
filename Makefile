@@ -1,4 +1,6 @@
-SRCS		=	srcs/so_long.c									\
+SRCS		=	srcs/game/so_long.c									\
+				srcs/game/setup.c									\
+				srcs/utils/print.c									\
 
 OBJS		=	$(SRCS:.c=.o)
 
