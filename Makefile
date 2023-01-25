@@ -1,4 +1,4 @@
-SRCS		=	main.c									\
+SRCS		=	dev/test.c									\
 
 OBJS		=	$(SRCS:.c=.o)
 
