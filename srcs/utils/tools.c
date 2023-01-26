@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 15:48:46 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/26 18:35:18 by fllanet          ###   ########.fr       */
+/*   Created: 2023/01/26 18:45:47 by fllanet           #+#    #+#             */
+/*   Updated: 2023/01/26 18:46:07 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
 
-int	main(int argc, char **argv)
+int ft_strlen(char *str)
 {
-	char **map;
-	
-	if (argc == 2) 
-	{
-		map = ft_map_initialyze(argv[1]);
-		if (map != NULL) // check map valid et remplir struct error de 1 pour error
-			ft_setup_window(map);
-		else
-			ft_putstr("error\n"); // return (exit propre + print error)
-	}
-	else
-		ft_putstr("error\n"); // return (exit propre + print error)
-	return (0);
+	int	i;
+
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i])
+		i++;
+	return (i);
 }

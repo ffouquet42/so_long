@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 20:04:04 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/26 16:15:50 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/26 18:08:34 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_setup_window(t_map *map)
 {
 	t_data	data;
 	t_tileset tileset;
-
+	
 	data.mlx_ptr = mlx_init();
 	ft_setup_tileset(data, &tileset);
 	data.win_ptr = mlx_new_window(data.mlx_ptr, 320, 64, "so_long");
