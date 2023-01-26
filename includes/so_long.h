@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:11:48 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/26 18:46:52 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/26 19:32:24 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct s_tileset
 
 typedef struct s_map
 {
-	// voir si on le rajoute a la structure 'value'
+	char	**value;
 }	t_map;
 
 typedef struct s_error
