@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 13:42:52 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/25 18:38:56 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/26 15:22:07 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,3 +63,12 @@ int main(int argc, char **argv)
     // mlx_put_image_to_window(mlx_ptr, win_ptr, img_ptr, 0, 0);
     // mlx_destroy_image (mlx_ptr, img_ptr);
     // mlx_destroy_display(mlx_ptr);
+
+    void	ft_display(t_data data, t_tileset *tileset)
+{
+	mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, tileset->floor_ptr, (size_t)0, (size_t)0);
+	mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, tileset->wall_ptr, (size_t)64, (size_t)0);
+	mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, tileset->loot_ptr, (size_t)128, (size_t)0);
+	mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, tileset->exit_ptr, (size_t)192, (size_t)0);
+	mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, tileset->player_ptr, (size_t)256, (size_t)0);
+}

@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:11:48 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/26 09:39:59 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/26 15:20:00 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ typedef struct s_tileset
 	void	*loot_ptr;
 	void	*exit_ptr;
 	void	*player_ptr;
+	int		width;
+	int		height;
 }	t_tileset;
 
 //--------------- PROTOTYPES ---------------//
@@ -46,7 +48,8 @@ typedef struct s_tileset
 int		main(int argc, char **argv);
 
 //--------------- setup.c ---------------//
-void	setup(void);
+void	ft_setup_window(void);
+void	ft_setup_tileset(t_data data, t_tileset *tileset);
 
 //--------------- UTILS ---------------//
 
