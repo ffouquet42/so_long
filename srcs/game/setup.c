@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 20:04:04 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/26 15:22:38 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/26 16:15:50 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_setup_tileset(t_data data, t_tileset *tileset)
 				"./img/player.xpm", &tileset->width, &tileset->height);
 }
 
-void	ft_setup_window(void)
+void	ft_setup_window(t_map *map)
 {
 	t_data	data;
 	t_tileset tileset;

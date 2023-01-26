@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:48:46 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/26 14:01:01 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/26 16:18:37 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 
 int	main(int argc, char **argv)
 {
-	if (argc == 1) // 2
-		ft_setup_window();
+	t_map map;
+
+	
+	if (argc == 1)
+		// map.value = ;
+		ft_setup_window(&map);
 	else
 		ft_putstr("error\n");
 	return (0);
