@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:28:15 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/28 00:27:59 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/28 00:44:14 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	ft_count_total_loot(t_game *game)
 	int	j;
 	
 	game->total_loot = 0;
+	game->looted = 0;
 	i = 0;
 	while (i < game->map_height)
 	{
