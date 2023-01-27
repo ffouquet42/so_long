@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:28:15 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/27 16:52:10 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/27 17:06:46 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ char    **ft_map_initialyze(char *map_path, t_map *s_map)
 {
     char    **map;
     int     fd;
-    int     x;
+    int     i;
 
 	fd = open(map_path, O_RDONLY);
 	if (fd < 0)
@@ -94,14 +94,14 @@ char    **ft_map_initialyze(char *map_path, t_map *s_map)
 	map = malloc(sizeof(char *) * (s_map->height + 1));
 	if (!map)
 		return (NULL);
-	x = 0;
-	while (x < s_map->height)
+	i = 0;
+	while (i < s_map->height)
 	{
-		map[x] = get_next_line(fd);
-		x++;
+		map[i] = get_next_line(fd);
+		i++;
 	}
-	s_map->width = ft_strlen(map[x - 1]);
-	map[x] = NULL;
+	s_map->width = ft_strlen(map[i - 1]);
+	map[i] = NULL;
 	close(fd);
 	// return (ft_delete_newline(map, s_map->height));
 	return (map);
