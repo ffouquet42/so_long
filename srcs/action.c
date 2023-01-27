@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 23:18:01 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/27 23:39:44 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/27 23:46:43 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void    ft_find_player_pos(t_game *game)
     }
 }
 
-void    ft_collect_loot(t_game *game)
+void    ft_collect_loot(t_game *game, int direction)
 {
     int x;
     int y;
@@ -43,6 +43,18 @@ void    ft_collect_loot(t_game *game)
     ft_find_player_pos(game);
     y = game->pos_y;
     x = game->pos_x;
-    ft_swap(&game->map[y][x], &game->map[y - 1][x]);
+    ft_swap(&game->map[y][x], &game->map[y + direction][x]);
+    game->map[y][x] = '0';
+}
+
+void    ft_collect_loot_side(t_game *game, int direction)
+{
+    int x;
+    int y;
+
+    ft_find_player_pos(game);
+    y = game->pos_y;
+    x = game->pos_x;
+    ft_swap(&game->map[y][x], &game->map[y][x + direction]);
     game->map[y][x] = '0';
 }

@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:11:48 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/27 23:39:48 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/27 23:48:59 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,14 @@ void	*ft_select_tileset(t_game *game, char c);
 //--------------- movement.c ---------------//
 void    ft_select_movement(int key, t_game *game);
 void    ft_move_up(t_game *game);
+void    ft_move_down(t_game *game);
+void    ft_move_left(t_game *game);
+void    ft_move_right(t_game *game);
 
 //--------------- action.c ---------------//
 void    ft_find_player_pos(t_game *game);
-void    ft_collect_loot(t_game *game);
+void    ft_collect_loot(t_game *game, int direction);
+void    ft_collect_loot_side(t_game *game, int direction);
 
 //--------------- print.c ---------------//
 void	ft_putchar(char c);
