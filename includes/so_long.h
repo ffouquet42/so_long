@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:11:48 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/27 17:00:22 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/27 18:00:08 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int		main(int argc, char **argv);
 void	ft_setup_window(t_map *map);
 void	ft_setup_tileset(t_data data, t_tileset *tileset);
 void	ft_setup_map(t_data data, t_tileset *tileset, t_map *map);
+void	*ft_select_tileset(t_tileset *tileset, char c);
 
 //--------------- MAP ---------------//
 
