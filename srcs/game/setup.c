@@ -6,14 +6,14 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 20:04:04 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/27 18:01:32 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/27 19:29:03 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
 
 void	*ft_select_tileset(t_tileset *tileset, char c)
-{	
+{
 	if (c == '1')
 		return (tileset->wall_ptr);
 	else if (c == '0')
@@ -31,7 +31,7 @@ void	ft_setup_map(t_data data, t_tileset *tileset, t_map *map)
 	int	i;
 	int	j;
 	void *tile;
-
+	
 	i = 0;
 	while (i < map->height)
 	{

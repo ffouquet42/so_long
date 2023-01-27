@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:11:48 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/27 18:00:08 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/27 19:05:59 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	*ft_select_tileset(t_tileset *tileset, char c);
 
 //--------------- initialyze.c ---------------//
 char	**ft_map_initialyze(char *map_path, t_map *s_map);
-char    **ft_delete_newline(char **map, int lines); // delete ?
+int		ft_count_lines(char *map_path);
 
 //--------------- UTILS ---------------//
 
