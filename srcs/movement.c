@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 20:44:25 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/27 23:03:33 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/27 23:39:58 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,21 @@ void    ft_move_up(t_game *game)
     int x;
     int y;
 
-    y = 0;
-    while (y < game->map_height)
+    ft_find_player_pos(game);
+    y = game->pos_y;
+    x = game->pos_x;
+    if (game->map[y - 1][x] != '1')
     {
-        x = 0;
-        while (x < game->map_width)
-        {
-            if (game->map[y][x] == 'P')
-            {
-                ft_swap(&game->map[y][x], &game->map[y - 1][x]);
-                ft_setup_map(game);
-            }
-            x++;
-        }
-        y++;
+        if (game->map[y - 1][x] == 'C')
+            ft_collect_loot(game);
+        else if (game->map[y - 1][x] == 'E') // + can exit
+            ft_putstr("\n EXIT !\n");
+        else
+            ft_swap(&game->map[y][x], &game->map[y - 1][x]);
+        ft_setup_map(game);
+        game->step++;
     }
-    game->step++; // si mouvement possible ?
 }
-
-// ft qui renvoie pos du 'P' ?
 
 void    ft_select_movement(int key, t_game *game)
 {
