@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:11:48 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/26 20:16:42 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/27 16:50:36 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,14 @@ typedef struct s_tileset
 typedef struct s_map
 {
 	char	**value;
+	int		width;
+	int		height;
 }	t_map;
 
 typedef struct s_error
 {
 
-} t_error;
+}	t_error;
 
 //--------------- PROTOTYPES ---------------//
 
@@ -67,8 +69,8 @@ void	ft_setup_tileset(t_data data, t_tileset *tileset);
 //--------------- MAP ---------------//
 
 //--------------- initialyze.c ---------------//
-char	**ft_map_initialyze(char *map_path);
-char    **ft_delete_newline(char **map, int lines);
+char	**ft_map_initialyze(char *map_path, t_map *s_map);
+char    **ft_delete_newline(char **map, int lines); // delete ?
 
 //--------------- UTILS ---------------//
 

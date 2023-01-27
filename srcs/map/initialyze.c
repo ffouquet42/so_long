@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:28:15 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/27 14:13:58 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/27 16:52:10 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,26 +79,30 @@
 // 	return (map);
 // }
 
-char    **ft_map_initialyze(char *map_path)
+// delete newline pas sur d'en avoir besoin
+
+char    **ft_map_initialyze(char *map_path, t_map *s_map)
 {
     char    **map;
     int     fd;
-    int     lines;
     int     x;
 
 	fd = open(map_path, O_RDONLY);
 	if (fd < 0)
 		return (NULL);
-	lines = 4; // fonction pour compter les lignes
-	map = malloc(sizeof(char *) * (lines + 1));
+	s_map->height = 4; // fonction pour compter les lignes
+	map = malloc(sizeof(char *) * (s_map->height + 1));
 	if (!map)
 		return (NULL);
 	x = 0;
-	while (x < lines)
+	while (x < s_map->height)
 	{
 		map[x] = get_next_line(fd);
 		x++;
 	}
+	s_map->width = ft_strlen(map[x - 1]);
+	map[x] = NULL;
 	close(fd);
-	return (ft_delete_newline(map, lines));
+	// return (ft_delete_newline(map, s_map->height));
+	return (map);
 }

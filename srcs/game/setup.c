@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 20:04:04 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/27 14:11:37 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/27 16:55:18 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,16 @@ void	ft_setup_window(t_map *map)
 	t_data		data;
 	t_tileset	tileset;
 
-	// int q = -1;
-    // while (q++ < 4)
-    //     printf("setup %i : %s", q, map->value[q]);
+	// DEV
+	// int d = 0;
+	// while (d < map->height)
+	// {
+	// 	printf("map in setup %i : %s", d, map->value[d]);
+	// 	d++;
+	// }
+	// printf("\nwidth: %i\n", map->width);
+	// printf("\nheigth: %i\n", map->height);
+	// DEV
 
 	data.mlx_ptr = mlx_init();
 	ft_setup_tileset(data, &tileset);
