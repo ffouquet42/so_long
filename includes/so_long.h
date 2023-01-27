@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:11:48 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/27 23:48:59 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/28 00:26:23 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ typedef struct s_game
 	int		step;
 	int		pos_y;
 	int		pos_x;
+	int		total_loot;
+	int		looted;
 }	t_game;
 
 typedef struct s_error
@@ -58,6 +60,7 @@ int		main(int argc, char **argv);
 //--------------- initialyze.c ---------------//
 char    **ft_map_initialyze(char *map_path, t_game *game);
 int		ft_count_lines(char *map_path);
+void	ft_count_total_loot(t_game *game);
 
 //--------------- setup.c ---------------//
 void	ft_setup_window(t_game *game);

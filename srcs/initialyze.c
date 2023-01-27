@@ -6,11 +6,31 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:28:15 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/27 22:33:06 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/28 00:27:59 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+void	ft_count_total_loot(t_game *game)
+{
+	int	i;
+	int	j;
+	
+	game->total_loot = 0;
+	i = 0;
+	while (i < game->map_height)
+	{
+		j = 0;
+		while (j < game->map_width)
+		{
+			if (game->map[i][j] == 'C')
+				game->total_loot++;
+			j++;
+		}
+		i++;
+	}
+}
 
 int		ft_count_lines(char *map_path)
 {

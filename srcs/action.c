@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 23:18:01 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/27 23:52:02 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/28 00:30:39 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void    ft_collect_loot(t_game *game, int direction)
     x = game->pos_x;
     ft_swap(&game->map[y][x], &game->map[y + direction][x]);
     game->map[y][x] = '0';
+    game->looted++;
 }
 
 void    ft_collect_loot_side(t_game *game, int direction)
@@ -57,4 +58,5 @@ void    ft_collect_loot_side(t_game *game, int direction)
     x = game->pos_x;
     ft_swap(&game->map[y][x], &game->map[y][x + direction]);
     game->map[y][x] = '0';
+    game->looted++;
 }

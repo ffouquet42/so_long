@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 20:04:04 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/27 22:39:55 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/28 00:29:49 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	ft_setup_map(t_game *game)
 
 void	ft_setup_tileset(t_game *game)
 {
+	ft_count_total_loot(game);
 	game->tile_width = 64;
 	game->tile_height = 64;
 	game->floor_ptr = mlx_xpm_file_to_image(game->mlx_ptr,
