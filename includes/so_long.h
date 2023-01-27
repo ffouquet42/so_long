@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:11:48 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/27 19:05:59 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/27 23:05:41 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,29 +26,22 @@
 # define BUFFER_SIZE 1
 
 //--------------- STRUCTURES ---------------//
-typedef struct s_data
+typedef struct s_game
 {
 	void	*mlx_ptr;
 	void	*win_ptr;
-}	t_data;
-
-typedef struct s_tileset
-{
 	void	*floor_ptr;
 	void	*wall_ptr;
 	void	*loot_ptr;
 	void	*exit_ptr;
 	void	*player_ptr;
-	int		width;
-	int		height;
-}	t_tileset;
-
-typedef struct s_map
-{
-	char	**value;
-	int		width;
-	int		height;
-}	t_map;
+	int		tile_width;
+	int		tile_height;
+	char	**map;
+	int		map_width;
+	int		map_height;
+	int		step;
+}	t_game;
 
 typedef struct s_error
 {
@@ -57,33 +50,32 @@ typedef struct s_error
 
 //--------------- PROTOTYPES ---------------//
 
-//--------------- GAME ---------------//
-
 //--------------- so_long.c ---------------//
 int		main(int argc, char **argv);
 
-//--------------- setup.c ---------------//
-void	ft_setup_window(t_map *map);
-void	ft_setup_tileset(t_data data, t_tileset *tileset);
-void	ft_setup_map(t_data data, t_tileset *tileset, t_map *map);
-void	*ft_select_tileset(t_tileset *tileset, char c);
-
-//--------------- MAP ---------------//
-
 //--------------- initialyze.c ---------------//
-char	**ft_map_initialyze(char *map_path, t_map *s_map);
+char    **ft_map_initialyze(char *map_path, t_game *game);
 int		ft_count_lines(char *map_path);
 
-//--------------- UTILS ---------------//
+//--------------- setup.c ---------------//
+void	ft_setup_window(t_game *game);
+void	ft_setup_tileset(t_game *game);
+void	ft_setup_map(t_game *game);
+void	*ft_select_tileset(t_game *game, char c);
+
+//--------------- movement.c ---------------//
+void    ft_select_movement(int key, t_game *game);
+void    ft_move_up(t_game *game);
 
 //--------------- print.c ---------------//
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
+void	ft_putnbr(int n);
+void	ft_display_step_shell(t_game *game);
 
 //--------------- tools.c ---------------//
 int		ft_strlen(char *str);
-
-//--------------- GET_NEXT_LINE ---------------//
+void	ft_swap(char *a, char *b);
 
 //--------------- get_next_line.c ---------------//
 char	*stash_to_line(char *stash, char *buff);

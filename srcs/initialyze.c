@@ -6,11 +6,11 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:28:15 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/27 19:37:28 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/27 22:33:06 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../includes/so_long.h"
 
 int		ft_count_lines(char *map_path)
 {
@@ -33,29 +33,30 @@ int		ft_count_lines(char *map_path)
 	return (lines);
 }
 
-char    **ft_map_initialyze(char *map_path, t_map *s_map)
+char    **ft_map_initialyze(char *map_path, t_game *game)
 {
-    char    **map;
+    char    **tmp_map;
     int     fd;
     int     i;
 
+	game->step = 0;
 	fd = open(map_path, O_RDONLY);
 	if (fd < 0)
 		return (NULL);
-	s_map->height = ft_count_lines(map_path);
-	if (s_map->height == NULL)
+	game->map_height = ft_count_lines(map_path);
+	if (game->map_height == NULL)
 		return (NULL);
-	map = malloc(sizeof(char *) * (s_map->height + 1));
-	if (!map)
+	tmp_map = malloc(sizeof(char *) * (game->map_height + 1));
+	if (!tmp_map)
 		return (NULL);
 	i = 0;
-	while (i < s_map->height)
+	while (i < game->map_height)
 	{
-		map[i] = get_next_line(fd);
+		tmp_map[i] = get_next_line(fd);
 		i++;
 	}
-	s_map->width = ft_strlen(map[i - 1]);
-	map[i] = NULL;
+	game->map_width = ft_strlen(tmp_map[i - 1]);
+	tmp_map[i] = NULL;
 	close(fd);
-	return (map);
+	return (tmp_map);
 }

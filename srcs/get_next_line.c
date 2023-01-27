@@ -6,11 +6,11 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:39:41 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/26 18:40:17 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/27 22:29:31 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../includes/so_long.h"
 
 char	*stash_to_line(char *stash, char *buff)
 {
