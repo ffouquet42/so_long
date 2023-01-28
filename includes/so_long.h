@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:11:48 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/28 22:17:07 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/28 22:50:28 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,10 @@ int		search_newline(const char *buff);
 char	*buff_to_stash(char *buff);
 char	*merge_stash_and_buff(char *stash, char *buff);
 char	*get_next_line(int fd);
+
+//--------------- check_error.c ---------------//
+int     ft_check_error(char *map_path);
+void    ft_display_error(int error_id);
+int     ft_check_ber(char *map_path);
 
 #endif

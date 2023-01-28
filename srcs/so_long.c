@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:48:46 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/28 01:12:28 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/28 23:01:18 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,22 @@ int	main(int argc, char **argv)
 {
 	t_game	game;
 
-	if (argc == 2) // et que map valide (ou au moins rectangle)
+	if (argc == 2)
 	{
-		game.map = ft_map_initialyze(argv[1], &game);
-		if (game.map != NULL) // check map valid et remplir struct error de 1 pour error
-			ft_setup_window(&game);
-		else
-			ft_putstr("error map (null)\n"); // return (exit propre + print error)
+		if (ft_check_error(argv[1]) == 0)
+		{
+			game.map = ft_map_initialyze(argv[1], &game);
+			if (game.map != NULL) // check map valid et remplir struct error de 1 pour error
+				//ft_setup_window(&game);
+				ft_putstr("game start\n");
+			else
+				ft_putstr("error map (null)\n"); // return (exit propre + print error)
+		}
 	}
 	else
-		ft_putstr("error argc\n"); // return (exit propre + print error)
+	{
+		ft_putstr("Error\n");
+		ft_putstr("Wrong number of arguments\n");
+	}
 	return (0);
 }
