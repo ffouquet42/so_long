@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:48:46 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/28 23:01:18 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/28 23:06:24 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,6 @@ int	main(int argc, char **argv)
 		}
 	}
 	else
-	{
-		ft_putstr("Error\n");
-		ft_putstr("Wrong number of arguments\n");
-	}
+		ft_putstr("Error\nWrong number of arguments\n");
 	return (0);
 }
