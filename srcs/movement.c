@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 20:44:25 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/28 01:10:30 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/28 21:46:02 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void    ft_move_right(t_game *game)
     }
 }
 
-void    ft_select_movement(int key, t_game *game)
+int     ft_select_movement(int key, t_game *game)
 {
     if (key == 'w' || key == 'W')
         ft_move_up(game);

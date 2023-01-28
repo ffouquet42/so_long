@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:28:15 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/28 00:44:14 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/28 21:43:59 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		ft_count_lines(char *map_path)
 
 	fd = open(map_path, O_RDONLY);
 	if (fd < 0)
-		return (NULL);
+		return (0);
 	lines = 0;
 	map_line = get_next_line(fd);
 	while (map_line)
@@ -65,7 +65,7 @@ char    **ft_map_initialyze(char *map_path, t_game *game)
 	if (fd < 0)
 		return (NULL);
 	game->map_height = ft_count_lines(map_path);
-	if (game->map_height == NULL)
+	if (game->map_height == 0)
 		return (NULL);
 	tmp_map = malloc(sizeof(char *) * (game->map_height + 1));
 	if (!tmp_map)
