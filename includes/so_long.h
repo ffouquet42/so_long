@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:11:48 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/28 00:26:23 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/28 01:10:59 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ typedef struct s_error
 
 //--------------- so_long.c ---------------//
 int		main(int argc, char **argv);
+int		ft_clean_exit(t_game *game, int step);
 
 //--------------- initialyze.c ---------------//
 char    **ft_map_initialyze(char *map_path, t_game *game);
