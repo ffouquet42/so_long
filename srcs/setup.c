@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 20:04:04 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/28 00:29:49 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/28 01:37:53 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,6 @@ void	ft_setup_window(t_game *game)
 	game->win_ptr = mlx_new_window(game->mlx_ptr, (game->map_width * 64), (game->map_height * 64), "so_long");
 	ft_setup_map(game);
 	mlx_key_hook(game->win_ptr, ft_select_movement, game);
+	mlx_hook(game->win_ptr, 17, 0, &ft_clean_exit, game);
 	mlx_loop(game->mlx_ptr);
 }
