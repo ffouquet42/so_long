@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:11:48 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/28 21:46:16 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/28 22:17:07 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_game
 	int		map_width;
 	int		map_height;
 	int		step;
+	int		previous_step;
 	int		pos_y;
 	int		pos_x;
 	int		total_loot;

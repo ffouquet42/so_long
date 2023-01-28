@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 20:00:15 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/27 22:59:27 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/28 22:18:32 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,11 @@ void	ft_putnbr(int n)
 
 void	ft_display_step_shell(t_game *game)
 {
-	ft_putstr("Step : ");
-	ft_putnbr(game->step);
-	ft_putchar('\n');
+	if (game->step > game->previous_step)
+	{
+		ft_putstr("Step : ");
+		ft_putnbr(game->step);
+		ft_putchar('\n');
+		game->previous_step = game->step;
+	}
 }

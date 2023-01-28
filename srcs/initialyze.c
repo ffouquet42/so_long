@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:28:15 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/28 21:43:59 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/28 22:17:41 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ char    **ft_map_initialyze(char *map_path, t_game *game)
     int     i;
 
 	game->step = 0;
+	game->previous_step = 0;
 	fd = open(map_path, O_RDONLY);
 	if (fd < 0)
 		return (NULL);
