@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 20:44:25 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/28 21:46:02 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/28 21:47:29 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,4 +109,5 @@ int     ft_select_movement(int key, t_game *game)
     else if (key == 65307)
         ft_clean_exit(game, 0);
     ft_display_step_shell(game); // afficher que quand on se deplace
+    return (0);
 }
