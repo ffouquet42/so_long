@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:08:52 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/29 22:40:13 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/29 23:15:03 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,28 @@ void    ft_check_duplicate(t_error *s_error)
 void    ft_close_by_wall(t_game *game, t_error *s_error)
 {
     int i;
-    int j;
 
     i = 0;
-    j = 0;
-    while (j < game->map_width)
+    while (i < game->map_width)
     {
-        if (game->map[0][j] != '1' || game->map[game->map_height - 1][j] != '1')
+        if (game->map[0][i] != '1' || game->map[game->map_height - 1][i] != '1')
         {
             s_error->map_closed = 1;
             s_error->errors_found++;
             return ;
         }
-        j++;
+        i++;
+    }
+    i = 0;
+    while (i < game->map_height)
+    {
+        if (game->map[i][0] != '1' || game->map[i][game->map_width - 1] != '1')
+        {
+            s_error->map_closed = 1;
+            s_error->errors_found++;
+            return ;
+        }
+        i++;
     }
 }
 
