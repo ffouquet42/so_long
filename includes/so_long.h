@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:11:48 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/28 22:50:28 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/29 04:00:37 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,12 @@ typedef struct s_game
 
 typedef struct s_error
 {
-
+	int		errors_found;
+	int		invalid_char;
+	int		one_player;
+	int		one_exit;
+	int		one_loot;
+	int 	map_shape;
 }	t_error;
 
 //--------------- PROTOTYPES ---------------//
@@ -63,6 +68,7 @@ int		ft_clean_exit(t_game *game, int step);
 char    **ft_map_initialyze(char *map_path, t_game *game);
 int		ft_count_lines(char *map_path);
 void	ft_count_total_loot(t_game *game);
+void	ft_initialyze_error(t_error *s_error);
 
 //--------------- setup.c ---------------//
 void	ft_setup_window(t_game *game);
@@ -103,5 +109,11 @@ char	*get_next_line(int fd);
 int     ft_check_error(char *map_path);
 void    ft_display_error(int error_id);
 int     ft_check_ber(char *map_path);
+
+//--------------- parsing.c ---------------//
+int     ft_parsing(t_game *game, t_error *s_error);
+int     ft_char_is_valid(char c, t_error *s_error);
+void    ft_check_duplicate(t_error *s_error);
+void    ft_check_map_shape(t_game *game, t_error *s_error);
 
 #endif

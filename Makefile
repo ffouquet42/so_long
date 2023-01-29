@@ -7,6 +7,7 @@ SRCS		=	srcs/so_long.c									\
 				srcs/get_next_line.c							\
 				srcs/action.c									\
 				srcs/check_error.c								\
+				srcs/parsing.c									\
 
 OBJS		=	$(SRCS:.c=.o)
 
