@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:08:52 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/29 04:06:38 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/29 22:40:13 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,24 @@ void    ft_check_duplicate(t_error *s_error)
         s_error->errors_found++;
 }
 
-// function check entourer par des murs
+void    ft_close_by_wall(t_game *game, t_error *s_error)
+{
+    int i;
+    int j;
+
+    i = 0;
+    j = 0;
+    while (j < game->map_width)
+    {
+        if (game->map[0][j] != '1' || game->map[game->map_height - 1][j] != '1')
+        {
+            s_error->map_closed = 1;
+            s_error->errors_found++;
+            return ;
+        }
+        j++;
+    }
+}
 
 void    ft_check_map_shape(t_game *game, t_error *s_error)
 {
@@ -51,6 +68,7 @@ void    ft_check_map_shape(t_game *game, t_error *s_error)
         s_error->errors_found++;
         s_error->map_shape = 1;
     }
+    ft_close_by_wall(game, s_error);
 }
 
 int     ft_parsing(t_game *game, t_error *s_error)
