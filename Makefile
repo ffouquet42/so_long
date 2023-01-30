@@ -8,6 +8,7 @@ SRCS		=	srcs/so_long.c									\
 				srcs/action.c									\
 				srcs/check_error.c								\
 				srcs/parsing.c									\
+				srcs/valid_path.c								\
 
 OBJS		=	$(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:11:48 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/29 22:14:15 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/30 19:57:44 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ typedef struct s_error
 	int		one_loot;
 	int 	map_shape;
 	int		map_closed;
+	int		valid_path;
 }	t_error;
 
 //--------------- PROTOTYPES ---------------//
@@ -117,5 +118,12 @@ int     ft_char_is_valid(char c, t_error *s_error);
 void    ft_check_duplicate(t_error *s_error);
 void    ft_check_map_shape(t_game *game, t_error *s_error);
 void    ft_close_by_wall(t_game *game, t_error *s_error);
+
+//--------------- valid_path.c ---------------//
+void    ft_valid_path(t_game *game, t_error *s_error);
+int     ft_player_can_move(t_game *game, char **map_cpy);
+void    ft_fill_space_of_player(t_game *game, char **map_cpy);
+int     ft_player_next_to_exit(t_game *game, char **map_cpy);
+int     ft_player_can_full_loot(t_game *game, char **map_cpy);
 
 #endif

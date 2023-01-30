@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:28:15 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/29 22:14:28 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/30 19:54:53 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_initialyze_error(t_error *s_error)
 	s_error->one_loot = 0;
 	s_error->map_shape = 0;
 	s_error->map_closed = 0;
+	s_error->valid_path = 0;
 }
 
 void	ft_count_total_loot(t_game *game)
