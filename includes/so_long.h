@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:11:48 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/31 21:35:05 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/31 22:07:23 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ void	ft_putchar(char c);
 void	ft_putstr(char *str);
 void	ft_putnbr(int n);
 void	ft_display_step_shell(t_game *game);
+void	ft_print_errors(t_error *s_error);
 
 //--------------- tools.c ---------------//
 int		ft_strlen(char *str);
