@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:11:48 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/31 21:13:26 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/31 21:35:05 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	ft_display_step_shell(t_game *game);
 int		ft_strlen(char *str);
 void	ft_swap(char *a, char *b);
 char	**ft_copy_map(t_game *game);
-char	*ft_strdup(char *str);
+char	*ft_strdup(char *str); 
 
 //--------------- get_next_line.c ---------------//
 char	*stash_to_line(char *stash, char *buff);

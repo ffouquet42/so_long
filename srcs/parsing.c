@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:08:52 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/30 19:19:16 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/31 22:00:00 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ int     ft_parsing(t_game *game, t_error *s_error)
     }
     ft_check_map_shape(game, s_error);
     ft_check_duplicate(s_error);
-    ft_valid_path(game, s_error);
+    if (s_error->map_closed == 0)
+        ft_valid_path(game, s_error);
     return (s_error->errors_found);
 }

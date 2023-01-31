@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:48:46 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/30 20:02:36 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/31 21:39:24 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,10 @@ int	main(int argc, char **argv)
 		{
 			ft_initialyze_error(&s_error);
 			game.map = ft_map_initialyze(argv[1], &game);
-			// game.map = NULL;
 			if (game.map != NULL && ft_parsing(&game, &s_error) == 0)
-			{
-				// game.map = ft_map_initialyze(argv[1], &game);
 				ft_setup_window(&game);
-				// ft_putstr("game start\n");
-			}
 			else
-				ft_putstr("!!!\n"); // return (print error, 0);
+				return (ft_print_errors(&s_error), 0);
 		}
 	}
 	else
