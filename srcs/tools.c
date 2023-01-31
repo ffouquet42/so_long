@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:45:47 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/27 22:29:44 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/01/31 21:11:51 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,45 @@ void	ft_swap(char *a, char *b)
 	c = *a;
 	*a = *b;
 	*b = c;
+}
+
+char	*ft_strdup(char *str)
+{
+	int		i;
+	char	*tmp;
+	char	*dest;
+
+	tmp = str;
+	i = 0;
+	while (tmp[i])
+		i++;
+	dest = malloc(sizeof(char) * (i + 1));
+	if (!dest)
+		return (NULL);
+	i = 0;
+	while (tmp[i])
+	{
+		dest[i] = tmp[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+char	**ft_copy_map(t_game *game)
+{
+	char **map_cpy;
+	int	i;
+
+	map_cpy = malloc(sizeof(char *) * (game->map_height + 1));
+	if (!map_cpy)
+		return (NULL);
+	i = 0;
+	while (i < game->map_height)
+	{
+		map_cpy[i] = ft_strdup(game->map[i]);
+		i++;
+	}
+	map_cpy[i] = NULL;
+	return (map_cpy);
 }
