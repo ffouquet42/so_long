@@ -21,7 +21,7 @@ CFLAGS		= 	-g -g3 -I./srcs/includes
 
 NAME		= 	so_long
 	
-MLX			= 	-Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+MLX			= 	-Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -c $< -o $@
