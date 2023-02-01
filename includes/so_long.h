@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:11:48 by fllanet           #+#    #+#             */
-/*   Updated: 2023/02/01 01:02:23 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/02/01 13:24:55 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ typedef struct s_error
 	int		one_player;
 	int		one_exit;
 	int		one_loot;
-	int 	map_shape;
+	int		map_shape;
 	int		map_closed;
 	int		valid_path;
 }	t_error;
@@ -67,7 +67,7 @@ int		main(int argc, char **argv);
 int		ft_clean_exit(t_game *game, int step);
 
 //--------------- initialyze.c ---------------//
-char    **ft_map_initialyze(char *map_path, t_game *game);
+char	**ft_map_initialyze(char *map_path, t_game *game);
 int		ft_count_lines(char *map_path);
 void	ft_count_total_loot(t_game *game);
 void	ft_initialyze_error(t_error *s_error);
@@ -80,15 +80,15 @@ void	*ft_select_tileset(t_game *game, char c);
 
 //--------------- movement.c ---------------//
 int		ft_select_movement(int key, t_game *game);
-void    ft_move_up(t_game *game);
-void    ft_move_down(t_game *game);
-void    ft_move_left(t_game *game);
-void    ft_move_right(t_game *game);
+void	ft_move_up(t_game *game);
+void	ft_move_down(t_game *game);
+void	ft_move_left(t_game *game);
+void	ft_move_right(t_game *game);
 
 //--------------- action.c ---------------//
-void    ft_find_player_pos(t_game *game);
-void    ft_collect_loot(t_game *game, int direction);
-void    ft_collect_loot_side(t_game *game, int direction);
+void	ft_find_player_pos(t_game *game);
+void	ft_collect_loot(t_game *game, int direction);
+void	ft_collect_loot_side(t_game *game, int direction);
 
 //--------------- print.c ---------------//
 void	ft_putchar(char c);
@@ -112,23 +112,23 @@ char	*merge_stash_and_buff(char *stash, char *buff);
 char	*get_next_line(int fd);
 
 //--------------- check_error.c ---------------//
-int     ft_check_error(char *map_path);
-void    ft_display_error(int error_id);
-int     ft_check_ber(char *map_path);
+int		ft_check_error(char *map_path);
+void	ft_display_error(int error_id);
+int		ft_check_ber(char *map_path);
 void	ft_free_map_copy(char **map);
 
 //--------------- parsing.c ---------------//
-int     ft_parsing(t_game *game, t_error *s_error);
-int     ft_char_is_valid(char c, t_error *s_error);
-void    ft_check_duplicate(t_error *s_error);
-void    ft_check_map_shape(t_game *game, t_error *s_error);
-void    ft_close_by_wall(t_game *game, t_error *s_error);
+int		ft_parsing(t_game *game, t_error *s_error);
+int		ft_char_is_valid(char c, t_error *s_error);
+void	ft_check_duplicate(t_error *s_error);
+void	ft_check_map_shape(t_game *game, t_error *s_error);
+void	ft_close_by_wall(t_game *game, t_error *s_error);
 
 //--------------- valid_path.c ---------------//
-void    ft_valid_path(t_game *game, t_error *s_error);
-int     ft_player_can_move(t_game *game, char **map_cpy);
-void    ft_fill_space_of_player(t_game *game, char **map_cpy);
-int     ft_player_next_to_exit(t_game *game, char **map_cpy);
-int     ft_player_can_full_loot(t_game *game, char **map_cpy);
+void	ft_valid_path(t_game *game, t_error *s_error);
+int		ft_player_can_move(t_game *game, char **map_cpy);
+void	ft_fill_space_of_player(t_game *game, char **map_cpy);
+int		ft_player_next_to_exit(t_game *game, char **map_cpy);
+int		ft_player_can_full_loot(t_game *game, char **map_cpy);
 
 #endif
