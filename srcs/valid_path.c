@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 19:17:57 by fllanet           #+#    #+#             */
-/*   Updated: 2023/02/01 01:04:12 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/02/01 02:59:13 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,18 +123,18 @@ void    ft_valid_path(t_game *game, t_error *s_error)
     char    **map_cpy;
 
     map_cpy = ft_copy_map(game);
-    if (map_cpy == NULL)
-    {
-        s_error->valid_path = 1;
-        s_error->errors_found++;
-        return ;
-    }
-    while (ft_player_can_move(game, map_cpy) == 1)
-        ft_fill_space_of_player(game, map_cpy);
-    if (ft_player_next_to_exit(game, map_cpy) == 1 && ft_player_can_full_loot(game, map_cpy) == 1)
-        return ;
-    s_error->valid_path = 1;
-    s_error->errors_found++;
+    // if (map_cpy == NULL)
+    // {
+    //     s_error->valid_path = 1;
+    //     s_error->errors_found++;
+    //     return ;
+    // }
+    // while (ft_player_can_move(game, map_cpy) == 1)
+    //     ft_fill_space_of_player(game, map_cpy);
+    // if (ft_player_next_to_exit(game, map_cpy) == 1 && ft_player_can_full_loot(game, map_cpy) == 1)
+    //     return ;
+    // s_error->valid_path = 1;
+    // s_error->errors_found++;
     ft_free_map_copy(map_cpy);
     return ;
 }

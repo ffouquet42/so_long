@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:45:47 by fllanet           #+#    #+#             */
-/*   Updated: 2023/02/01 00:47:10 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/02/01 02:33:16 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	ft_free_map(t_game *game)
 	int i;
 
 	i = 0;
-	while (game->map[i])
+	while (i < game->map_height)
 	{
 		free(game->map[i]);
 		i++;
