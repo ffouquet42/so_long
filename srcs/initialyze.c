@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:28:15 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/30 19:54:53 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/02/01 13:31:01 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_count_total_loot(t_game *game)
 {
 	int	i;
 	int	j;
-	
+
 	game->total_loot = 0;
 	game->looted = 0;
 	i = 0;
@@ -45,11 +45,11 @@ void	ft_count_total_loot(t_game *game)
 	}
 }
 
-int		ft_count_lines(char *map_path)
+int	ft_count_lines(char *map_path)
 {
-	char    *map_line;
-    int     fd;
-    int     lines;
+	char	*map_line;
+	int		fd;
+	int		lines;
 
 	fd = open(map_path, O_RDONLY);
 	if (fd < 0)
@@ -66,11 +66,11 @@ int		ft_count_lines(char *map_path)
 	return (lines);
 }
 
-char    **ft_map_initialyze(char *map_path, t_game *game)
+char	**ft_map_initialyze(char *map_path, t_game *game)
 {
-    char    **tmp_map;
-    int     fd;
-    int     i;
+	char	**tmp_map;
+	int		fd;
+	int		i;
 
 	game->step = 0;
 	game->previous_step = 0;

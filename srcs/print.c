@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 20:00:15 by fllanet           #+#    #+#             */
-/*   Updated: 2023/02/01 00:41:11 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/02/01 13:38:59 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	ft_display_step_shell(t_game *game)
 		game->previous_step = game->step;
 	}
 }
-
 
 void	ft_print_errors(t_error *s_error, t_game *game)
 {

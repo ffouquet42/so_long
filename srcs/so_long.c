@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:48:46 by fllanet           #+#    #+#             */
-/*   Updated: 2023/02/01 00:47:05 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/02/01 13:40:20 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_clean_exit(t_game *game, int step)
 int	main(int argc, char **argv)
 {
 	t_game	game;
-	t_error s_error;
+	t_error	s_error;
 
 	if (argc == 2)
 	{

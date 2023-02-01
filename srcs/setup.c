@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 20:04:04 by fllanet           #+#    #+#             */
-/*   Updated: 2023/02/01 12:38:46 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/02/01 13:39:52 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ void	*ft_select_tileset(t_game *game, char c)
 
 void	ft_setup_map(t_game *game)
 {
-	int	i;
-	int	j;
-	void *tile;
-	
+	int		i;
+	int		j;
+	void	*tile;
+
 	i = 0;
 	while (i < game->map_height)
 	{
@@ -40,7 +40,8 @@ void	ft_setup_map(t_game *game)
 		while (j < game->map_width)
 		{
 			tile = ft_select_tileset(game, game->map[i][j]);
-			mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, tile, (j * 64), (i * 64));
+			mlx_put_image_to_window(game->mlx_ptr, game->win_ptr,
+				tile, (j * 64), (i * 64));
 			j++;
 		}
 		i++;
@@ -68,7 +69,8 @@ void	ft_setup_window(t_game *game)
 {
 	game->mlx_ptr = mlx_init();
 	ft_setup_tileset(game);
-	game->win_ptr = mlx_new_window(game->mlx_ptr, (game->map_width * 64), (game->map_height * 64), "so_long");
+	game->win_ptr = mlx_new_window(game->mlx_ptr, (game->map_width * 64),
+			(game->map_height * 64), "so_long");
 	ft_setup_map(game);
 	mlx_key_hook(game->win_ptr, ft_select_movement, game);
 	mlx_hook(game->win_ptr, 17, 0, &ft_clean_exit, game);
