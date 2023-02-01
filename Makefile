@@ -16,12 +16,11 @@ CC			=	gcc
 
 RM			=	rm -f
 
-#CFLAGS		= 	-Wall -Wextra -Werror -g3 -I./srcs/includes
-CFLAGS		= 	-g -g3 -I./srcs/includes
+CFLAGS		= 	-Wall -Wextra -Werror -g3 -I./srcs/includes
 
 NAME		= 	so_long
 
-MLX		= 	-Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+MLX			= 	-Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -c $< -o $@
@@ -40,4 +39,4 @@ fclean:		clean
 
 re:		fclean $(NAME)
 
-.PHONY:		all clean fclean re bonus
+.PHONY:		all clean fclean re

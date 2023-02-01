@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 20:04:04 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/28 01:37:53 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/02/01 12:38:46 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	*ft_select_tileset(t_game *game, char c)
 		return (game->loot_ptr);
 	else if (c == 'E')
 		return (game->exit_ptr);
+	return (NULL);
 }
 
 void	ft_setup_map(t_game *game)
