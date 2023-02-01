@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:11:48 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/31 22:07:23 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/02/01 01:02:23 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,13 +95,14 @@ void	ft_putchar(char c);
 void	ft_putstr(char *str);
 void	ft_putnbr(int n);
 void	ft_display_step_shell(t_game *game);
-void	ft_print_errors(t_error *s_error);
+void	ft_print_errors(t_error *s_error, t_game *game);
 
 //--------------- tools.c ---------------//
 int		ft_strlen(char *str);
 void	ft_swap(char *a, char *b);
 char	**ft_copy_map(t_game *game);
-char	*ft_strdup(char *str); 
+char	*ft_strdup(char *str);
+void	ft_free_map(t_game *game);
 
 //--------------- get_next_line.c ---------------//
 char	*stash_to_line(char *stash, char *buff);
@@ -114,6 +115,7 @@ char	*get_next_line(int fd);
 int     ft_check_error(char *map_path);
 void    ft_display_error(int error_id);
 int     ft_check_ber(char *map_path);
+void	ft_free_map_copy(char **map);
 
 //--------------- parsing.c ---------------//
 int     ft_parsing(t_game *game, t_error *s_error);

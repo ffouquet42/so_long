@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:48:46 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/31 21:39:24 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/02/01 00:47:05 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,12 @@
 
 int	ft_clean_exit(t_game *game, int step)
 {
-	int	i;
-
 	if (step == 1)
 	{
 		game->step++;
 		ft_display_step_shell(game);
 	}
-	i = 0;
-	while (game->map[i])
-	{
-		free(game->map[i]);
-		i++;
-	}
-	free(game->map);
+	ft_free_map(game);
 	mlx_destroy_window(game->mlx_ptr, game->win_ptr);
 	mlx_destroy_image(game->mlx_ptr, game->floor_ptr);
 	mlx_destroy_image(game->mlx_ptr, game->wall_ptr);
@@ -53,7 +45,7 @@ int	main(int argc, char **argv)
 			if (game.map != NULL && ft_parsing(&game, &s_error) == 0)
 				ft_setup_window(&game);
 			else
-				return (ft_print_errors(&s_error), 0);
+				return (ft_print_errors(&s_error, &game), 0);
 		}
 	}
 	else

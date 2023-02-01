@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 22:31:43 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/28 23:01:50 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/02/01 01:06:02 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,17 @@ int     ft_check_error(char *map_path)
     if (ft_check_ber(map_path) == 1)
         return (ft_display_error(1), 1);
     return (0);
+}
+
+void	ft_free_map_copy(char **map)
+{
+    int i;
+
+	i = 0;
+	while (map[i])
+	{
+		free(map[i]);
+		i++;
+	}
+	free(map);
 }

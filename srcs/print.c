@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 20:00:15 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/31 21:49:12 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/02/01 00:41:11 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_display_step_shell(t_game *game)
 }
 
 
-void	ft_print_errors(t_error *s_error)
+void	ft_print_errors(t_error *s_error, t_game *game)
 {
 	ft_putstr("Error\n");
 	if (s_error->invalid_char == 1)
@@ -77,4 +77,5 @@ void	ft_print_errors(t_error *s_error)
 		ft_putstr("Map must be closed by wall\n");
 	if (s_error->valid_path == 1)
 		ft_putstr("No valid path found\n");
+	ft_free_map(game);
 }

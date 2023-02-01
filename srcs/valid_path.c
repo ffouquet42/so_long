@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 19:17:57 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/31 21:25:29 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/02/01 01:04:12 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,5 +135,6 @@ void    ft_valid_path(t_game *game, t_error *s_error)
         return ;
     s_error->valid_path = 1;
     s_error->errors_found++;
+    ft_free_map_copy(map_cpy);
     return ;
 }

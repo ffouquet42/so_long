@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:45:47 by fllanet           #+#    #+#             */
-/*   Updated: 2023/01/31 21:11:51 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/02/01 00:47:10 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,17 @@ char	**ft_copy_map(t_game *game)
 	}
 	map_cpy[i] = NULL;
 	return (map_cpy);
+}
+
+void	ft_free_map(t_game *game)
+{
+	int i;
+
+	i = 0;
+	while (game->map[i])
+	{
+		free(game->map[i]);
+		i++;
+	}
+	free(game->map);
 }
